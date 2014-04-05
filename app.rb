@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'git_fame'
 require 'pry'
+require 'json'
 
 get '/' do
   repository = GitFame::Base.new({
@@ -16,5 +17,9 @@ get '/' do
     html += "<li>#{author.name}: LOC: #{author.loc} Commits: #{author.commits} Files: #{author.files}</li>"
   end
   html += "</ul>"
+
+  push = JSON.parse(params[:payload])
+  html =  "I got some JSON: #{push.inspect}"
+
   html
 end
