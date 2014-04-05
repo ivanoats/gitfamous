@@ -4,6 +4,10 @@ require 'pry'
 require 'json'
 
 get '/' do
+  "Set your Github webhook to POST here."
+end
+
+post '/' do
   repository = GitFame::Base.new({
     sort: 'loc',
     repository: `pwd`.strip,
@@ -18,7 +22,7 @@ get '/' do
   end
   html += "</ul>"
 
-  push = JSON.parse(params[:payload])
+  push = JSON.parse(params.to_json)
   html =  "I got some JSON: #{push.inspect}"
 
   html
