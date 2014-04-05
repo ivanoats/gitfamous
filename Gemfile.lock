@@ -1,0 +1,27 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    git_fame (1.2.1)
+      hirb
+      mimer_plus
+      progressbar
+      trollop
+    hirb (0.7.1)
+    mimer_plus (0.0.4)
+    progressbar (0.21.0)
+    rack (1.5.2)
+    rack-protection (1.5.2)
+      rack
+    sinatra (1.4.4)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    tilt (1.4.1)
+    trollop (2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  git_fame
+  sinatra
